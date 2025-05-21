@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Login Daniel Elis</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Proyecto Bases de datos 2</title>
 </head>
 <body>
     <div class="container" id="container">
         <div class="form-container sing-up">
-            <form>
+            <form id="registerForm">
                 <h1>Crea una cuenta</h1>
-                <span>utiliza tu email para registrarte</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Contraseña">
+                <span>Utiliza tu email para registrarte</span>
+                <input type="email" name="email" id="registeremail" placeholder="Email" required>
+                <input type="password" name="password" id="registerpassword" placeholder="Contraseña" required>
                 <button type="submit">Registrate</button>
             </form>
         </div>
         <div class="form-container sing-in">
-            <form>
+            <form id="loginForm">
                 <h1>Inicia sesion</h1>
-                <span>utiliza tu email y contraseña</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Contraseña">
-                <a href="#">Olvide mi contraseña</a>
+                <span>Utiliza tu email y contraseña</span>
+                <input type="email" name="email" id="loginemail" placeholder="Email" required>
+                <input type="password" name="password" id="loginpassword" placeholder="Contraseña" required>
+                <a href="recover.html">Olvide mi contraseña</a>
                 <button type="submit">Iniciar sesion</button>
             </form>
         </div>
@@ -43,6 +43,6 @@
             </div>
         </div>
     </div>
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

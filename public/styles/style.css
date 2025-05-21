@@ -18,6 +18,10 @@ body {
 }
 
 .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -153,7 +157,6 @@ body {
     color: #fff;
     position: relative;
     left: -100%;
-    height: 100%;
     width: 200%;
     transform: translateX(0);
     transition: all 0.6s ease-in-out;   
@@ -193,4 +196,11 @@ body {
 
 .container.active .toggle-right{
     transform: translateX(-200%);
+}
+
+.div-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
