@@ -104,19 +104,25 @@ async function register(req, res) {
 // controllers/authController.js
 
 async function recover(req, res) {
-    const { email, token, newPassword } = req.body;
+    let { email, token, newPassword } = req.body;
+    token = token === '' ? null : token;
 
-    if (!email || !token || !newPassword) {
-        return res.status(400).json({ error: 'Email, token y nueva contraseña son obligatorios' });
-    }
+    console.log("Datos recibidos en el backend:", { email, token, newPassword }); // Log de entrada
 
     try {
         const connection = await db.getConnection();
+        console.log("Conexión a la base de datos establecida");
 
         const result = await connection.execute(
             `BEGIN
-         pkg_login.recover_password(:p_usuario, :p_clave, :p_token, :codigo, :mensaje);
-       END;`,
+                pkg_login.recover_password(
+                    :p_usuario, 
+                    :p_clave, 
+                    :p_token, 
+                    :codigo, 
+                    :mensaje
+                );
+            END;`,
             {
                 p_usuario: email,
                 p_clave: newPassword,
@@ -125,21 +131,19 @@ async function recover(req, res) {
                 mensaje: { dir: oracledb.BIND_OUT, type: oracledb.STRING, maxSize: 500 }
             }
         );
-        console.log("Resultado del procedimiento:", result.outBinds);
+
+        console.log("Resultado del procedimiento:", result.outBinds); // Log del resultado de Oracle
         await connection.commit();
         await connection.close();
 
         const codigo = result.outBinds.codigo;
         const mensaje = result.outBinds.mensaje;
 
-        if (codigo === 3) {
-            res.json({ codigo, mensaje }); // Recuperación exitosa
-        } else {
-            res.status(400).json({ codigo, mensaje }); // Token inválido, usuario no existe, etc.
-        }
+        // Envía la respuesta al frontend
+        res.status(200).json({ codigo, mensaje });
 
     } catch (err) {
-        console.error(err);
+        console.error("Error en recover:", err);
         res.status(500).json({ error: 'Error al recuperar contraseña', detalle: err.message });
     }
 }
