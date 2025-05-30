@@ -1,0 +1,2 @@
+WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/Users/danielelis/Desktop/Dany/Universidad/Mariano/Semestre_7/Bases_de_datos_2/ProyectoFinal/wallet/Wallet_ProyectoDB2")))
+SSL_SERVER_DN_MATCH=yes

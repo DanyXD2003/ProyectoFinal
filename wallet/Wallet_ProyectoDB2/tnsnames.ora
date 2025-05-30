@@ -1,0 +1,12 @@
+proyectodb2_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-phoenix-1.oraclecloud.com))(connect_data=(service_name=g7bf0fdcbc35bda_proyectodb2_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+proyectodb2_low = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-phoenix-1.oraclecloud.com))(connect_data=(service_name=g7bf0fdcbc35bda_proyectodb2_low.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+proyectodb2_medium = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-phoenix-1.oraclecloud.com))(connect_data=(service_name=g7bf0fdcbc35bda_proyectodb2_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+proyectodb2_tp = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-phoenix-1.oraclecloud.com))(connect_data=(service_name=g7bf0fdcbc35bda_proyectodb2_tp.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+proyectodb2_tpurgent = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-phoenix-1.oraclecloud.com))(connect_data=(service_name=g7bf0fdcbc35bda_proyectodb2_tpurgent.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+
+

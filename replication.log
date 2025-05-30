@@ -1,0 +1,33 @@
+2025-05-28 23:24:45,824 - INFO - ====== INICIANDO PROCESO DE REPLICACIÓN ======
+2025-05-28 23:24:45,825 - INFO - Conectando a Oracle...
+2025-05-28 23:24:45,826 - ERROR - Error general: DPY-4027: no configuration directory specified
+Traceback (most recent call last):
+  File "/Users/danielelis/Desktop/Dany/Universidad/Mariano/Semestre 7/Bases de datos 2/ProyectoFinal/script.py", line 60, in replicar_datos
+    oracle_conn = oracledb.connect(**config["ORACLE"])
+  File "/Users/danielelis/Library/Python/3.9/lib/python/site-packages/oracledb/connection.py", line 1264, in connect
+    return conn_class(dsn=dsn, pool=pool, params=params, **kwargs)
+  File "/Users/danielelis/Library/Python/3.9/lib/python/site-packages/oracledb/connection.py", line 625, in __init__
+    dsn = params_impl.process_args(dsn, kwargs, thin)
+  File "src/oracledb/impl/base/connect_params.pyx", line 563, in oracledb.base_impl.ConnectParamsImpl.process_args
+  File "src/oracledb/impl/base/connect_params.pyx", line 498, in oracledb.base_impl.ConnectParamsImpl.parse_connect_string
+  File "src/oracledb/impl/base/connect_params.pyx", line 496, in oracledb.base_impl.ConnectParamsImpl.parse_connect_string
+  File "src/oracledb/impl/base/connect_params.pyx", line 325, in oracledb.base_impl.ConnectParamsImpl._parse_connect_string
+  File "src/oracledb/impl/base/connect_params.pyx", line 1206, in oracledb.base_impl.TnsnamesFileReader.read_tnsnames
+  File "/Users/danielelis/Library/Python/3.9/lib/python/site-packages/oracledb/errors.py", line 199, in _raise_err
+    raise error.exc_type(error) from cause
+oracledb.exceptions.DatabaseError: DPY-4027: no configuration directory specified
+2025-05-28 23:24:45,830 - INFO - ====== REPLICACIÓN COMPLETADA ======
+2025-05-28 23:39:11,883 - INFO - ====== INICIANDO PROCESO DE REPLICACIÓN ======
+2025-05-28 23:39:11,883 - INFO - Usando wallet en: /Users/danielelis/Desktop/Dany/Universidad/Mariano/Semestre 7/Bases de datos 2/ProyectoFinal/Wallet_ProyectoDB2
+2025-05-28 23:39:11,884 - INFO - Conectando a Oracle...
+2025-05-28 23:39:11,886 - ERROR - Error general: DPI-1047: Cannot locate a 64-bit Oracle Client library: "dlopen(libclntsh.dylib, 0x0001): tried: 'libclntsh.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OSlibclntsh.dylib' (no such file), '/usr/lib/libclntsh.dylib' (no such file, not in dyld cache), 'libclntsh.dylib' (no such file)". See https://python-oracledb.readthedocs.io/en/latest/user_guide/initialization.html for help
+Help: https://python-oracledb.readthedocs.io/en/latest/user_guide/troubleshooting.html#dpi-1047
+Traceback (most recent call last):
+  File "/Users/danielelis/Desktop/Dany/Universidad/Mariano/Semestre 7/Bases de datos 2/ProyectoFinal/script.py", line 71, in replicar_datos
+    oracledb.init_oracle_client()
+  File "src/oracledb/impl/thick/utils.pyx", line 527, in oracledb.thick_impl.init_oracle_client
+  File "src/oracledb/impl/thick/utils.pyx", line 562, in oracledb.thick_impl.init_oracle_client
+  File "src/oracledb/impl/thick/utils.pyx", line 474, in oracledb.thick_impl._raise_from_info
+oracledb.exceptions.DatabaseError: DPI-1047: Cannot locate a 64-bit Oracle Client library: "dlopen(libclntsh.dylib, 0x0001): tried: 'libclntsh.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OSlibclntsh.dylib' (no such file), '/usr/lib/libclntsh.dylib' (no such file, not in dyld cache), 'libclntsh.dylib' (no such file)". See https://python-oracledb.readthedocs.io/en/latest/user_guide/initialization.html for help
+Help: https://python-oracledb.readthedocs.io/en/latest/user_guide/troubleshooting.html#dpi-1047
+2025-05-28 23:39:11,887 - INFO - ====== REPLICACIÓN COMPLETADA ======

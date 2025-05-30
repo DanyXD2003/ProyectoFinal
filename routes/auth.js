@@ -8,5 +8,3 @@ router.post('/register', authController.register);
 router.post('/recover', authController.recover);
 
 module.exports = router;
-
-
